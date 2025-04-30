@@ -1,9 +1,23 @@
 ---
-title: notes on importing data
-author: Ben Taft
-copyright: (C) Higher Expectations for Racine County Youth
-date: 21 September 2021
+title: "importing NSC data"
+author: "Ben Taft"
+copyright: "(C) Higher Expectations for Racine County"
+date: "`r Sys.Date()`"
 ---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = FALSE
+)
+```
+
+```{r setup}
+library(nscr)
+```
+
 
 # Importing Data from the YWCA's "National Clearinghouse" Source
 
@@ -83,46 +97,35 @@ It contains 8 missing values as of today.
 
 ### Enrollment Status
 
-There are **7** different categories that describes how a student was enrolled during a term.
+There are **7** different categories that describes how a student was enrolled
+during a term.
 
-1. **F**: Full time
-1. **Q**: 3/4 time
-1. **H**: 1/2 time
-1. **L**: less than 1/2 time
-1. **A**: leave of absence
-1. **W**: withdrew
-1. **D**: died :(
+```{r}
+#| label: show-enrollment-statuses
+knitr::kable(nscr::NSC_ENROLLMENT_STATUSES)
+```
 
 ### Class Level
 
 The data define **14** different kinds of class level.
 
-1. Undergraduate levels
-   1. **F**: Freshman
-   1. **S**: Sophomore
-   1. **J**: Junior
-   1. **R**: Senior
-   1. **C**: Certificate
-   1. **N**: Unspecified
-   1. **B**: Bachelor's
-1. Graduate levels
-   1. **M**: Master’s
-   1. **D**: Doctoral
-   1. **P**: Postdoctorate
-   1. **L**: First Professional
-1. Other levels
-   1. **G**: Unspecified (Graduate/Professional)
-   1. **A**: Associate's
-   1. **T**: Post Baccalaureate Certificate
+```{r}
+#| label: show-class-years
+knitr::kable(nscr::NSC_CLASS_YEARS)
+```
 
 ### Fields About Declared Major
 
 There are several of these, to allow for multiple majors.
 They are very sparse.
-Each declared major has two fields: a text name and a (possibly more standardized) code.
+Each declared major has two fields: a text name and a (possibly more
+standardized) code.
 
 ### College Sequence
 
-This identifies groups of school terms that correspond to one matriculation, e.g. at MATC.
-It also came sparse because some of the schools only reported the sequence number for the first term of a matriculation.
-I used Calc to fill in empty cells with what seemed to be the correct sequence number.
+This identifies groups of school terms that correspond to one matriculation,
+e.g. at MATC.
+It also came sparse because some of the schools only reported the sequence
+number for the first term of a matriculation.
+I used Calc to fill in empty cells with what seemed to be the correct sequence
+number.
