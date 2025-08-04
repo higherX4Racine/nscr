@@ -8,11 +8,12 @@
 #' @returns one of "Graduated," "Within Graduation Window," or "Past Graduation Window."
 #' @export
 student_status <- function(graduation, activity) {
-    if (any(graduation, na.rm = TRUE)) {
-        return("Graduated")
-    }
-    if (any(activity, na.rm = TRUE)) {
-        return("Within Graduation Window")
-    }
-    return("Past Graduation Window")
+    dplyr::case_when(
+        any(graduation, na.rm = TRUE) ~ nscr::NSC_GRADUATION_STATUS_LEVELS[1],
+        any(activity, na.rm = TRUE) ~ nscr::NSC_GRADUATION_STATUS_LEVELS[2],
+        .default = nscr::NSC_GRADUATION_STATUS_LEVELS[3]
+    ) |>
+        factor(
+            levels = nscr::NSC_GRADUATION_STATUS_LEVELS
+        )
 }

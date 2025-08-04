@@ -2,5 +2,7 @@
 
 export(elapsed)
 export(student_status)
+importFrom(dplyr,case_when)
+importFrom(dplyr,if_else)
 importFrom(lubridate,as.duration)
 importFrom(lubridate,interval)

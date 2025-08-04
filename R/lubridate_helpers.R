@@ -15,7 +15,8 @@ elapsed <- function(start_datetime,
                      end_datetime,
                      units="years") {
 
-    as.numeric(lubridate::as.duration(lubridate::interval(start_datetime,
-                                                          end_datetime)),
-               units)
+        start_datetime |>
+        lubridate::interval(end_datetime) |>
+        lubridate::as.duration() |>
+        as.numeric(units)
 }

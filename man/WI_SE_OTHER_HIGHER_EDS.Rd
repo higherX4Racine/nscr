@@ -10,7 +10,6 @@ A two-column table of higher ed. names and categories
 \item{College Name}{Verbose National Student Clearinghouse names for higher eds.}
 \item{Institution}{a short factor level that the higher ed. belongs to.}
 }
-#' ,
 }
 \usage{
 WI_SE_OTHER_HIGHER_EDS

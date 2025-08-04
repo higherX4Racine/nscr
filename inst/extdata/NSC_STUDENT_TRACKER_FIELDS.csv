@@ -1,0 +1,51 @@
+﻿COLUMN POSITION,FIELD NAME,MAX. LENGTH,TYPE,DESCRIPTION
+A,Your Unique Identifier,16,AN,"The student identification number as provided in your graduate or request file. In order to preserve formatting, each identifier ends with an underscore (e.g., 123456_)."
+B,First Name,40,A,Student's first name as provided in your graduate or request file.
+C,Middle Initial,40,A,Student’s middle name or initial as provided in your graduate or request file.
+D,Last Name,40,A,Student’s last name as provided in your graduate or request file.
+E,Name Suffix,5,A,"Name suffix as provided in your graduate or request file (e.g., III, Jr, Sr)."
+F,Requestor Return Field,50,AN,"If you submitted a graduate file and included the student Social Security number, it will be returned in this field. If you submitted a request file, the data you provided in this field will be returned unaltered (e.g., cohort identification, etc.). If no data was provided, the field is blank. In order to preserve formatting, each identifier ends with an underscore (e.g., 123456_)."
+G,Record Found Y/N,1,A,Y = Detail report contains student’s postsecondary record N = Detail report does NOT contain student’s postsecondary record
+H,High School Code,6,AN,ACT code of the high school that the student attended as indicated in your graduate or request file. I High School Graduation Date 8 N Graduation date or last date of attendance as provided in your graduate or request file.
+J,College Code/Branch,9,N,"OPE/FICE code of the college that the student attended. This is the six-digit college code, a hyphen, and then the two-digit branch code. K College Name 40 AN Name of the postsecondary institution that the student attended."
+L,College State,2,A,State in which the postsecondary institution that the student attended is located. The common USPS state abbreviations are used. M 2-year/4-year 17 AN Type of postsecondary institution that the student attended: 4-year = 4-year or higher institution 2-year = 2-year institution L = less than 2-year institution
+N,Public/Private,7,A,Indicates whether the postsecondary institution that the student attended is a “Public” or “Private” institution. O Enrollment Begin Date 8 N Begin date for the student’s period of attendance.
+O,Enrollment Begin Date,8,N,Begin date for the student’s period of attendance.
+P,Enrollment End Date,8,N,End date for the student’s period of attendance.
+Q,Enrollment Status,1,A,"The last enrollment status reported for the student: F = Full-time Q = Three-quarter time H = Half-time L = Less than half-time A = Leave of absence W = Withdrawn D = Deceased If the reporting institution hasn’t defined the student’s enrollment status as directory information, this field will be left blank."
+R,Graduated,1,A,Graduation status information available from the reporting institution.Y = Institution reported the student as graduated. N = Institution did NOT report the student as graduated
+S,Graduation Date,8,N,Date of student’s graduation or degree achievement as provided by reporting institution.
+T,Degree Title,80,AN,"If available, the title of the degree the student received as provided by the reporting institution."
+U,Major,80,A,"If available, degree Major as provided by the reporting institution."
+V,College Sequence,2,N,"The sequential order of each postsecondary institution the student attended.
+Enrollment records from a student’s high school years and the first summer = 0
+Enrollment records from the first postsecondary institution the student attended beginning with any first fall enrollments = 1
+Enrollments from additional postsecondary institutions = 2, 3, etc."
+W,Program Code,50,AN,Student program code as provided on your graduate or request file.
+X,CLASS_LEVEL,1,A,"As reported by the reporting institution.
+F = Freshman
+S = Sophomore
+J = Junior
+R = Senior
+C = Certificate undergraduate
+N = Unspecified undergraduate
+A = Associate’s
+B = Bachelor’s
+M = Master’s
+D = Doctoral graduate
+P = Post doctorate
+L = Professional
+G = unspecified graduate/professional
+T = Post baccalaureate certificate
+The class level is described on page 54 of the postsecondary enrollment reporting guide."
+Y,ENROLLMENT_CIP_1,6,N,As reported by the reporting institution.
+Z,ENROLLMENT_MAJOR_1,80,A,As reported by the reporting institution.
+AA,ENROLLMENT_CIP_2,6,N,As reported by the reporting institution.
+AB,ENROLLMENT_MAJOR_2,80,A,As reported by the postsecondary institution.
+AC,DEGREE_CIP_1,6,N,As reported by the reporting institution in the DegreeVerification data file.
+AD,DEGREE_MAJOR_1,80,A,As reported by the reporting institution in the DegreeVerification data file. This is a duplicate of column U.
+AE,DEGREE_CIP_2,6,N,As reported by the reporting institution in the DegreeVerification data file.
+AF,DEGREE_MAJOR_2,80,A,As reported by the reporting institution in the DegreeVerification data file.
+AG,DEGREE_LEVEL,1,A,"As reported by the reporting institution in the DegreeVerification data file. C = certificate A = associate’s B = bachelor’s D = doctorate M = master’s L = professional P = post doctorate G = graduate/professional unspecified T = post baccalaureate certificate When a value of imputed is reported in column T, the reporting institution has not reported a degree record to the Clearinghouse, but has reported an enrollment record indicating that the student has graduated. The StudentTracker logic will impute a degree level based on the reporting institution’s level: 2-year institution: degree level = A 4-year institution: degree level = B"
+AH,PARENT_COLLEGE_CODE,9,AN,These two columns were added as a way to identify the main campus college code and name in instances where the student has records from a branch campus with a different name.
+AI,PARENT_COLLEGE_NAME,60,AN,These two columns were added as a way to identify the main campus college code and name in instances where the student has records from a branch campus with a different name.
